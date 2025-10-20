@@ -1,146 +1,321 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Villa Tozeur – Location saisonnière à Tozeur, Tunisie</title>
-  <meta name="description" content="Villa de charme à Tozeur : 2 chambres, salon spacieux, jardin privatif avec barbecue, climatisation, fibre, parking. Entre l’aéroport et la zone touristique." />
-  <link rel="canonical" href="https://villa-tozeur.netlify.app/" />
-  <link rel="stylesheet" href="style.v2.css" />
+  <title>Villa Tozeur – Location de vacances à Tozeur (2 ch, jardin, Wi-Fi)</title>
+  <meta name="description" content="Villa Tozeur : maison de plain-pied avec 2 chambres, salon, cuisine équipée, jardin privatif & BBQ, climatisation et Wi-Fi fibre. Près de l’aéroport et de la zone touristique. Réservation WhatsApp.">
+  <link rel="canonical" href="https://www.villa-tozeur.tn/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Villa Tozeur – Calme, confort et authenticité à Tozeur">
+  <meta property="og:description" content="Location saisonnière à Tozeur : 2 chambres, jardin privatif, clim & Wi-Fi fibre. Réservez facilement sur WhatsApp.">
+  <meta property="og:image" content="https://www.villa-tozeur.tn/images/hero.jpg">
+  <meta property="og:url" content="https://www.villa-tozeur.tn/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo-villa-les-dunes-dor.png">
+
+  <link rel="preload" as="image" href="images/hero.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
+
 <body>
-  <header>
-    <h1>🏡 Villa Tozeur</h1>
-    <nav>
-      <a href="#gallery">Galerie</a>
-      <a href="#details">Détails</a>
-      <a href="#reviews">Avis</a>
-      <a href="#pricing">Tarifs</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
+        <img src="images/logo-villa-les-dunes-dor.png" alt="Logo Villa Tozeur" class="site-logo" width="120" height="120">
+      </a>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#home">Accueil</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#details">Détails</a>
+        <a href="#why-tozeur">Pourquoi Tozeur ?</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="btn-outline">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/21655788630?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20la%20Villa%20Tozeur.%20Dates%20:%20__%20au%20__%20%7C%20Nb%20personnes%20:%20__"
+     target="_blank" rel="noopener" class="whatsapp-float" aria-label="Réserver sur WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text container">
       <h2>Calme, confort et authenticité à Tozeur</h2>
-      <p>Plain-pied • 2 chambres • salon spacieux • cuisine équipée • jardin privatif avec barbecue • climatisation & chauffage • fibre optique • parking</p>
-      <div class="center-btn">
-        <a class="btn" href="#contact">Vérifier la disponibilité</a>
-        <a class="btn" href="https://www.booking.com" target="_blank" rel="noopener">Avis sur Booking</a>
+      <p>Maison de plain-pied avec <strong>2 chambres</strong>, salon, cuisine équipée, <strong>jardin privatif</strong> & BBQ. Climatisation, <strong>Wi-Fi fibre</strong>, parking/garage. Idéale familles & amis.</p>
+      <div class="cta">
+        <a class="btn whatsapp" href="https://wa.me/21655788630" target="_blank" rel="noopener">💬 Réserver sur WhatsApp</a>
+        <a class="btn booking" href="https://www.booking.com/hotel/tn/villa-les-dunes-d-or.fr.html#tab-reviews" target="_blank" rel="noopener">Voir les avis sur Booking</a>
       </div>
+      <p class="hint"><span class="star">⭐</span> Note moyenne <strong>9,2/10</strong> — <a href="https://www.booking.com/hotel/tn/villa-les-dunes-d-or.fr.html#tab-reviews" target="_blank" rel="noopener"><strong>Voir les avis</strong></a></p>
     </div>
   </section>
 
-  <section id="gallery">
+  <!-- GALERIE (8 photos, 2 lignes sur desktop) -->
+  <section id="gallery" class="container">
     <h2>Galerie</h2>
+    <p>Découvrez chaque espace de <strong>Villa Tozeur</strong> : entrée, cuisine, terrasse, coin barbecue.</p>
+
     <div class="gallery-grid">
-      <img src="images/1.jpg" alt="Salon traditionnel tozorien">
-      <img src="images/2.jpg" alt="Première chambre confortable">
-      <img src="images/3.jpg" alt="Deuxième chambre lumineuse">
-      <img src="images/4.jpg" alt="Cuisine équipée">
-      <img src="images/5.jpg" alt="Jardin privatif avec barbecue">
-      <img src="images/6.jpg" alt="Façade de la villa">
+      <figure class="gallery-item" data-label="Façade">
+        <img src="images/facade-villa-tozeur.jpg" alt="Façade de Villa Tozeur" loading="lazy" width="800" height="600">
+        <figcaption>Façade</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Entrée">
+        <img src="images/entrée-villa-tozeur.jpg" alt="Entrée accueillante" loading="lazy" width="800" height="600">
+        <figcaption>Entrée</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Cuisine équipée">
+        <img src="images/cuisine-villa-tozeur.jpg" alt="Cuisine équipée et moderne" loading="lazy" width="800" height="600">
+        <figcaption>Cuisine équipée</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Coin repas">
+        <img src="images/coin-de-repas-villa-tozeur.jpg" alt="Coin de repas convivial" loading="lazy" width="800" height="600">
+        <figcaption>Coin repas</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Espace barbecue">
+        <img src="images/espace-barbacue-villa-tozeur.jpg" alt="Espace barbecue au jardin" loading="lazy" width="800" height="600">
+        <figcaption>Espace barbecue</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Terrasse">
+        <img src="images/terrasse-villa-tozeur.jpg" alt="Terrasse ombragée" loading="lazy" width="800" height="600">
+        <figcaption>Terrasse</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Garage">
+        <img src="images/garage-villa-tozeur.jpg" alt="Garage privé sécurisé" loading="lazy" width="800" height="600">
+        <figcaption>Garage</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-label="Café turc">
+        <img src="images/café-turc-villa-tozeur.jpg" alt="Espace détente café turc" loading="lazy" width="800" height="600">
+        <figcaption>Café turc</figcaption>
+      </figure>
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Agrandissement de l'image">
+    <img id="lightbox-img" src="" alt="Image agrandie">
+  </div>
+
+  <!-- PRÉSENTATION -->
+  <section id="about">
+    <div class="container">
+      <h2>Présentation</h2>
+      <p>Bienvenue à <strong>Villa Tozeur</strong>, une maison chaleureuse et paisible au cœur de Tozeur. Conçue pour les familles et les groupes d’amis, elle offre le confort d’une maison moderne tout en conservant l’authenticité du Sud tunisien. Les espaces de vie sont baignés de lumière, la cuisine est entièrement équipée et le jardin privatif invite à profiter des douces soirées du désert.</p>
+      <p>Notre objectif : vous proposer une location simple, claire et agréable — avec une <strong>connexion fibre</strong> pour télétravailler, une <strong>climatisation</strong> efficace pour les journées chaudes et des <strong>équipements complets</strong> pour des séjours courts ou longs.</p>
+    </div>
+  </section>
+
+  <!-- DÉTAILS -->
   <section id="details">
-    <h2>Détails de la Villa</h2>
-    <p>Idéalement située entre l’aéroport international de Tozeur et la zone touristique, la villa offre un cadre calme et sécurisé. Maison de plain-pied avec deux chambres, un salon spacieux décoré dans le style tozorien, une cuisine entièrement équipée et un jardin privatif avec espace barbecue.</p>
-    <p>Équipements : climatisation & chauffage, fibre optique Internet, deux téléviseurs, garage pour une voiture.</p>
-  </section>
+    <div class="container">
+      <h2>🧱 Détails de la Villa</h2>
+      <p>Située entre l’aéroport international de Tozeur et la zone touristique, la villa vous accueille dans un cadre calme et sécurisé.</p>
 
-  <section id="reviews">
-    <h2>Avis clients</h2>
-    <div class="reviews-grid">
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>« Très propre, calme et proche de tout. Hôte disponible. » — A., France</p>
-      </div>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p>« Jardin agréable, enfants ravis. Nous reviendrons. » — S., Tunisie</p>
-      </div>
-      <div class="review">
-        <div class="stars">★★★★☆</div>
-        <p>« Bonne connexion Internet et clim efficace. » — M., Italie</p>
+      <div class="amenities" role="list">
+        <div class="amenity" role="listitem" aria-label="2 chambres (4–5 couchages)">
+          <span class="emoji">🛏️</span> 2 chambres (4–5 couchages)
+        </div>
+        <div class="amenity" role="listitem" aria-label="Climatisation et chauffage">
+          <span class="emoji">❄️</span> Climatisation / chauffage
+        </div>
+        <div class="amenity" role="listitem" aria-label="Wi-Fi fibre">
+          <span class="emoji">📶</span> Wi-Fi fibre
+        </div>
+        <div class="amenity" role="listitem" aria-label="Parking et garage privé">
+          <span class="emoji">🚗</span> Parking / garage
+        </div>
+        <div class="amenity" role="listitem" aria-label="Cuisine équipée et barbecue">
+          <span class="emoji">🍳</span> Cuisine équipée & BBQ
+        </div>
+        <div class="amenity" role="listitem" aria-label="Draps et serviettes inclus">
+          <span class="emoji">🧼</span> Draps & serviettes inclus
+        </div>
+        <div class="amenity" role="listitem" aria-label="Machine à laver">
+          <svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h384c35.3 
+            0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm0 48h384c8.8 0 16 7.2 16 16v32H48V64c0-8.8 
+            7.2-16 16-16zm192 64a144 144 0 1 0 0 288 144 144 0 1 0 0-288zm0 48a96 96 0 1 1 0 192 
+            96 96 0 1 1 0-192zM112 80a16 16 0 1 1 0 32 16 16 0 1 1 0-32zm64 0a16 16 0 1 1 0 32 
+            16 16 0 1 1 0-32z"/>
+          </svg>
+          Machine à laver
+        </div>
+        <div class="amenity" role="listitem" aria-label="Jardin privatif">
+          <svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M320 24c0 79.5-64.5 144-144 144C96.5 168 32 103.5 32 24c79.5 0 144 64.5 144 144 0 0 64.5-64.5 144-144zM64 320h64v160h64V320h64l-96-96-96 96zM368 320c-61.9 0-112 50.1-112 112h224c0-61.9-50.1-112-112-112z"/>
+          </svg>
+          Jardin privatif
+        </div>
       </div>
     </div>
-    <div class="center-btn">
-      <a class="btn" href="https://www.booking.com" target="_blank" rel="noopener">Voir tous les avis sur Booking</a>
+  </section>
+
+  <!-- ÉQUIPEMENTS DÉTAILLÉS -->
+  <section id="amenities-extended">
+    <div class="container">
+      <h2>Équipements en détail</h2>
+      <p>Vous trouverez sur place tout le nécessaire pour un séjour confortable : literie de qualité, linge de bain, cuisine équipée (réfrigérateur, four, plaques, ustensiles, cafetière), <strong>machine à laver</strong>, télévision, Internet fibre, climatisation/chauffage et barbecue dans le jardin. Nous pouvons fournir un lit parapluie sur simple demande.</p>
     </div>
   </section>
 
+  <!-- EMPLACEMENT & ACCÈS -->
+  <section id="location" class="soft">
+    <div class="container">
+      <h2>Emplacement &amp; accès</h2>
+      <p>La villa est idéalement située entre l’aéroport international de Tozeur et la zone touristique, dans un quartier résidentiel calme.</p>
+      <ul class="ticks">
+        <li><strong>8 min</strong> de l’aéroport de Tozeur–Nefta</li>
+        <li><strong>6 min</strong> du centre-ville et des commerces</li>
+        <li><strong>10–15 min</strong> des palmeraies, Corbeille de Nefta et Chott El-Jérid</li>
+        <li>Stationnement <strong>gratuit</strong> : garage privé + facilité dans la rue</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- POURQUOI VISITER TOZEUR -->
+  <section id="why-tozeur">
+    <div class="container">
+      <h2>Pourquoi visiter Tozeur ?</h2>
+      <p>Située entre désert et palmeraie, <strong>Tozeur</strong> séduit par son charme unique et son authenticité. C’est une ville-oasis au sud-ouest de la Tunisie, célèbre pour ses <strong>paysages spectaculaires</strong>, son <strong>architecture en briques ocres</strong> et sa lumière dorée incomparable. Véritable porte du Sahara, Tozeur offre un mélange parfait entre <strong>nature, culture et détente</strong>.</p>
+      <p>En explorant la région, vous découvrirez :</p>
+      <ul class="ticks">
+        <li>Les <strong>palmeraies de Tozeur</strong>, parmi les plus vastes d’Afrique du Nord.</li>
+        <li>Les <strong>villages de montagne</strong> Chebika, Tamerza et Mides.</li>
+        <li>Le mythique <strong>Chott El-Jérid</strong> et ses reflets à perte de vue.</li>
+        <li>Les <strong>décors de Star Wars</strong> à Ong Jmel, près de Nefta.</li>
+        <li>Une population accueillante et une gastronomie authentique.</li>
+      </ul>
+      <p>Que vous soyez en quête de <strong>détente</strong>, d’<strong>aventures</strong> ou d’un <strong>séjour romantique</strong>, Tozeur touche le cœur de chaque voyageur.</p>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
   <section id="pricing">
-    <h2>Tarifs & saisons</h2>
-    <p>Tarifs indicatifs – confirmez selon vos dates de séjour. Haute saison : Septembre – Janvier, vacances et jours fériés.</p>
-    <div class="pricing-table">
-      <div class="season">
-        <h3>Basse saison</h3>
-        <div class="period">Dates hors vacances</div>
-        <table>
-          <tr><th>Nuit</th><th>Semaine</th><th>Mois</th></tr>
-          <tr><td>200 DT</td><td>1200 DT</td><td>2500 DT</td></tr>
-        </table>
+    <div class="container">
+      <h2>🗓️ Tarifs par saison</h2>
+      <p>Les prix incluent le Wi-Fi, la climatisation et le ménage de fin de séjour. Remises possibles sur longues durées.</p>
+
+      <div class="pricing-table" role="table" aria-label="Tarifs par saison">
+        <div class="season" role="rowgroup">
+          <h3 role="rowheader">Basse saison</h3>
+          <p class="period">de mai à août</p>
+          <table aria-label="Tarifs basse saison">
+            <tr><th>Période</th><th>Prix</th></tr>
+            <tr><td>Par nuit</td><td>200 TND</td></tr>
+            <tr><td>Par semaine</td><td>1200 TND</td></tr>
+            <tr><td>Par mois</td><td>2500 TND</td></tr>
+          </table>
+        </div>
+
+        <div class="season" role="rowgroup">
+          <h3 role="rowheader">Moyenne saison</h3>
+          <p class="period">de février à avril</p>
+          <table aria-label="Tarifs moyenne saison">
+            <tr><th>Période</th><th>Prix</th></tr>
+            <tr><td>Par nuit</td><td>230 TND</td></tr>
+            <tr><td>Par semaine</td><td>1500 TND</td></tr>
+            <tr><td>Par mois</td><td>3000 TND</td></tr>
+          </table>
+        </div>
+
+        <div class="season high" role="rowgroup">
+          <h3 role="rowheader">Haute saison</h3>
+          <p class="period">de septembre à janvier</p>
+          <table aria-label="Tarifs haute saison">
+            <tr><th>Période</th><th>Prix</th></tr>
+            <tr><td>Par nuit</td><td>250 TND</td></tr>
+            <tr><td>Par semaine</td><td>1700 TND</td></tr>
+            <tr><td>Par mois</td><td>4000 TND</td></tr>
+          </table>
+        </div>
       </div>
-      <div class="season">
-        <h3>Moyenne saison</h3>
-        <div class="period">Printemps & été</div>
-        <table>
-          <tr><th>Nuit</th><th>Semaine</th><th>Mois</th></tr>
-          <tr><td>230 DT</td><td>1300 DT</td><td>3000 DT</td></tr>
-        </table>
-      </div>
-      <div class="season high">
-        <h3>Haute saison</h3>
-        <div class="period">Septembre – Janvier</div>
-        <table>
-          <tr><th>Nuit</th><th>Semaine</th><th>Mois</th></tr>
-          <tr><td>250 DT</td><td>1500 DT</td><td>4000 DT</td></tr>
-        </table>
+
+      <div class="center-btn">
+        <a class="btn whatsapp" href="https://wa.me/21655788630" target="_blank" rel="noopener">💬 Demander une réservation</a>
       </div>
     </div>
   </section>
 
-  <section id="map">
-    <h2>Localisation</h2>
-    <p>Tozeur, Tunisie — entre l’aéroport et la zone touristique.</p>
-    <div style="max-width:900px;margin:0 auto;border-radius:10px;overflow:hidden">
-      <iframe title="Carte" src="https://www.google.com/maps?q=Tozeur,Tunisia&output=embed" width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- AVIS -->
+  <section id="reviews">
+    <div class="container">
+      <h2>⭐ Avis de nos clients</h2>
+      <p>Découvrez les avis vérifiés sur Booking.com :</p>
+      <a class="btn booking" href="https://www.booking.com/hotel/tn/villa-les-dunes-d-or.fr.html#tab-reviews" target="_blank" rel="noopener">Voir les avis sur Booking.com</a>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact & réservation</h2>
-    <div class="center-btn" style="margin-bottom:20px">
-      <a class="btn whatsapp" href="https://wa.me/21600000000" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-    </div>
-    <form action="https://formspree.io/f/your-id" method="POST" style="max-width:700px;margin:0 auto">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <input type="text" name="name" placeholder="Nom complet" required>
-        <input type="email" name="email" placeholder="E-mail" required>
-        <input type="tel" name="phone" placeholder="Téléphone">
-        <input type="text" name="dates" placeholder="Dates souhaitées (ex: 12–15 déc)">
+    <div class="container">
+      <h2>Contact</h2>
+      <form id="contactForm" action="https://formspree.io/f/myznvevo" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nouveau message depuis le site Villa Tozeur">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp">
+
+        <label for="name">Nom</label>
+        <input id="name" type="text" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Envoyer</button>
+        <p class="form-hint">En envoyant, vous acceptez notre politique de confidentialité.</p>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Téléphone / WhatsApp :</strong> <a href="https://wa.me/21655788630">+216 55 788 630</a></p>
+        <p><strong>Email :</strong> <a href="mailto:samir.sahnoun@gmail.com">samir.sahnoun@gmail.com</a></p>
       </div>
-      <textarea name="message" rows="5" placeholder="Votre message" style="width:100%;margin-top:12px"></textarea>
-      <div class="center-btn"><button class="btn" type="submit">Envoyer la demande</button></div>
-    </form>
+    </div>
+  </section>
+
+  <!-- CARTE -->
+  <section id="map">
+    <div class="container">
+      <h2>Nous trouver</h2>
+      <p>Voici l’emplacement de <strong>Villa Tozeur</strong> :</p>
+      <div class="map-wrap">
+        <iframe title="Carte Villa Tozeur"
+          src="https://www.google.com/maps?q=Villa%20Tozeur%20Tozeur&hl=fr&z=17&output=embed"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </section>
 
   <footer>
-    © <span id="year"></span> Villa Tozeur — Tous droits réservés · Mentions légales : hébergeur Netlify
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Villa Tozeur — Tous droits réservés.</p>
+      <nav aria-label="Liens utiles">
+        <a href="#contact">Confidentialité</a>
+        <a href="#reviews">Avis</a>
+      </nav>
+    </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/21600000000" aria-label="WhatsApp">✆</a>
-
-  <div id="lightbox" class="lightbox">
-    <span class="close-btn" id="lightbox-close">×</span>
-    <span class="arrow left" id="lightbox-prev">‹</span>
-    <img id="lightbox-img" alt="Aperçu photo">
-    <span class="arrow right" id="lightbox-next">›</span>
-    <div class="counter" id="lightbox-counter">1 / 6</div>
-  </div>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <script src="lightbox.v2.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
