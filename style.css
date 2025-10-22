@@ -214,3 +214,59 @@ body.lb-open{ overflow:hidden }
   aspect-ratio:auto !important; /* on neutralise toute contrainte précédente */
   border-radius:10px;
 }
+/* === MOBILE PATCH — Galerie plus grande & 1 colonne === */
+@media (max-width: 560px){
+  /* le conteneur de la section Galerie prend toute la largeur utile */
+  #gallery.container{ width:100%; }
+
+  /* 1 seule colonne => vignettes bien larges */
+  .gallery-grid{
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* coins + ombre un peu plus soft sur mobile */
+  .gallery-item{
+    border-radius: 12px;
+    box-shadow: 0 3px 16px rgba(0,0,0,.10);
+  }
+}
+
+/* === Lightbox — centrage parfait + confort mobile === */
+.lightbox{
+  padding: env(safe-area-inset-top, 0px)
+           env(safe-area-inset-right, 0px)
+           env(safe-area-inset-bottom, 0px)
+           env(safe-area-inset-left, 0px);
+  justify-content: center;   /* déjà présent mais on réaffirme */
+  align-items: center;
+}
+.lightbox img{
+  display:block;
+  margin:auto;               /* centre l’image dans la modale */
+  max-width: 100vw;          /* utilise toute la largeur si besoin */
+  max-height: 90vh;
+}
+
+/* Compteur bien centré sur petits écrans */
+@media (max-width: 560px){
+  .lightbox .counter{
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .9rem;
+    padding: .28rem .65rem;
+  }
+  /* flèches un peu plus basses pour éviter le notch */
+  .lightbox .arrow{ top: 50%; transform: translateY(-50%); }
+}
+
+/* === (Rappel) 4:3 dur — si jamais un style le casse sur mobile === */
+@media (max-width: 560px){
+  .gallery-grid .gallery-item{ position:relative !important; overflow:hidden !important; }
+  .gallery-grid .gallery-item::before{ content:""; display:block; padding-top:75% !important; }
+  .gallery-grid .gallery-item > img{
+    position:absolute !important; inset:0 !important;
+    width:100% !important; height:100% !important;
+    object-fit:cover !important; object-position:center !important;
+  }
+}
