@@ -1,5 +1,23 @@
 /sitemap.xml
+cat > _headers << 'EOF'
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+cd /c/Users/samir/Desktop/villa-tozeur
+
+# (facultatif) si un ancien _headers.txt traine, on le supprime du repo
+git rm -f _headers.txt 2>/dev/null
+
+# on crée/écrase le fichier _headers
+cat > _headers << 'EOF'
+/sitemap.xml
   Content-Type: application/xml; charset=utf-8
 
 /robots.txt
   Content-Type: text/plain; charset=utf-8
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000
