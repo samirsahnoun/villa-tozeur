@@ -160,3 +160,28 @@
   });
 })();// juste après: const lightbox = $('#lightbox');
 lightbox.style.touchAction = 'pan-y'; // évite les conflits swipe/horizontal
+let scrollY = 0;
+
+function openAt(index){
+  images = $all('.gallery-grid img'); // refresh
+  if (index < 0 || index >= images.length) return;
+  current = index;
+
+  // Geler la position de scroll (anti-saut mobile)
+  scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.body.style.top = `-${scrollY}px`;
+  document.body.classList.add('lb-open');
+
+  lightbox.classList.add('open');
+  showImage();
+}
+
+function closeLB(){
+  lightbox.classList.remove('open');
+  document.body.classList.remove('lb-open');
+
+  // Restaurer la position de scroll exacte
+  const y = scrollY || 0;
+  document.body.style.top = '';
+  window.scrollTo(0, y);
+}
