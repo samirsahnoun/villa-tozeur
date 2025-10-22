@@ -270,3 +270,62 @@ body.lb-open{ overflow:hidden }
     object-fit:cover !important; object-position:center !important;
   }
 }
+/* === MOBILE — Galerie +1 colonne, visuels plus grands === */
+@media (max-width: 560px){
+  #gallery.container{ width: 100%; }
+
+  .gallery-grid{
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .gallery-item{
+    border-radius: 12px;
+    box-shadow: 0 3px 16px rgba(0,0,0,.10);
+  }
+}
+
+/* === Lightbox — centrage parfait et safe-areas === */
+.lightbox{
+  justify-content: center;
+  align-items: center;
+  padding: env(safe-area-inset-top, 0)
+           env(safe-area-inset-right, 0)
+           env(safe-area-inset-bottom, 0)
+           env(safe-area-inset-left, 0);
+  touch-action: pan-y; /* laisse défiler la page verticalement */
+}
+
+.lightbox img{
+  display:block;
+  margin:auto;
+  max-width: 100vw;
+  max-height: 90vh;
+}
+
+/* Compteur et flèches mieux placés sur petits écrans */
+@media (max-width: 560px){
+  .lightbox .counter{
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .9rem;
+    padding: .28rem .65rem;
+  }
+  .lightbox .arrow{
+    top: 50%;
+    transform: translateY(-50%);
+    padding: .25rem .6rem;
+  }
+}
+
+/* === Sécurité 4:3 sur mobile (si un style le casse) === */
+@media (max-width: 560px){
+  .gallery-grid .gallery-item{ position:relative !important; overflow:hidden !important; }
+  .gallery-grid .gallery-item::before{ content:""; display:block; padding-top:75% !important; }
+  .gallery-grid .gallery-item > img{
+    position:absolute !important; inset:0 !important;
+    width:100% !important; height:100% !important;
+    object-fit:cover !important; object-position:center !important;
+    aspect-ratio:auto !important;
+  }
+}
