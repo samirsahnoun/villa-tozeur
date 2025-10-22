@@ -19,6 +19,8 @@
       document.body.appendChild(created);
     }
     const lightbox = $('#lightbox');
+lightbox.style.touchAction = 'pan-y'; // évite les conflits de geste sur mobile
+
     lightboxImg = $('#lightbox-img');
 
     // Clear previous UI children (avoid duplicates)
