@@ -37,7 +37,7 @@ img{max-width:100%;display:block;border-radius:10px}
 .site-header nav a:hover{ border-color:#eee }
 
 /* Hero */
-.hero{ background: url("images/hero.jpg") center/cover no-repeat; color: white; min-height: 58vh; position:relative; display:flex; align-items:center; border-bottom: 6px solid #c99853 }
+.hero{ background: url("images/hero.webp") center/cover no-repeat; color: white; min-height: 58vh; position:relative; display:flex; align-items:center; border-bottom: 6px solid #c99853 }
 .hero::after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.45) }
 .hero .hero-text{ position:relative; z-index:2; padding: 52px 0; max-width: 760px; text-align:center; margin:0 auto }
 .hero h2{ font-size:clamp(2.0rem,3.8vw,2.9rem); margin:0 0 16px; text-shadow: 0 2px 10px rgba(0,0,0,.45) }
