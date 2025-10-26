@@ -20,7 +20,7 @@
     }
     lightboxImg = $('#lightbox-img');
 
-    // Clean UI
+    // Nettoyage UI
     $$('.close-btn,.arrow.left,.arrow.right,.counter,.fs-btn', lightbox).forEach(n=>n.remove());
 
     // UI
@@ -121,9 +121,14 @@
       const nav=document.getElementById('main-nav');
       if (!btn || !nav) return;
 
+      const label = btn.querySelector('.label');
+
       const setOpen=(open)=>{
         document.body.classList.toggle('nav-open', open);
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        btn.setAttribute('title', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        if (label) label.textContent = open ? 'Fermer' : 'Menu';
       };
 
       btn.addEventListener('click', ()=> setOpen(!document.body.classList.contains('nav-open')) );

@@ -24,29 +24,33 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-flex">
-      <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
-        <img src="images/logo-villa-les-dunes-dor.png" alt="Logo Villa Tozeur" class="site-logo" width="120" height="120" loading="eager">
-      </a>
-      <!-- Bouton hamburger (mobile) -->
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <!-- IMPORTANT: id="main-nav" -->
-      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-        <a href="#home">Accueil</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#details">Détails</a>
-        <a href="#why-tozeur">Pourquoi Tozeur ?</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="#reviews">Avis</a>
-        <a href="#contact" class="btn-outline">Contact</a>
-      </nav>
-    </div>
-  </header>
+  
+<header class="site-header">
+  <div class="container header-flex">
+    <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
+      <img src="images/logo-villa-les-dunes-dor.png" alt="Logo Villa Tozeur" class="site-logo" width="120" height="120" loading="eager">
+    </a>
+
+    <!-- Bouton hamburger (mobile) -->
+    <button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="main-nav"
+            aria-label="Ouvrir le menu" title="Ouvrir le menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      <span class="label">Menu</span>
+    </button>
+
+    <!-- IMPORTANT: id="main-nav" -->
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#home">Accueil</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#details">Détails</a>
+      <a href="#why-tozeur">Pourquoi Tozeur ?</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#reviews">Avis</a>
+      <a href="#contact" class="btn-outline">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Bouton WhatsApp flottant -->
   <a href="https://wa.me/21655788630?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20la%20Villa%20Tozeur.%20Dates%20:%20__%20au%20__%20%7C%20Nb%20personnes%20:%20__" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Réserver sur WhatsApp">

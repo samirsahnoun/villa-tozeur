@@ -282,3 +282,38 @@ section h2:first-of-type { margin-top: 0.2em; }
   body.nav-open .nav-toggle .bar:nth-child(2){ opacity:0; }
   body.nav-open .nav-toggle .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 }
+/* === Bouton menu : label visible + focus accessible === */
+.nav-toggle { display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .6rem; border:0; background:transparent; border-radius:10px; cursor:pointer; }
+.nav-toggle .bar{ display:block; width:24px; height:2px; background:#333; margin:5px 0; transition:transform .2s ease, opacity .2s ease }
+.nav-toggle .label { font-weight:700; font-size:.95rem; color:#333; }
+.nav-toggle:focus-visible{ outline:3px solid #00358044; outline-offset:2px; }
+
+/* === Menu mobile : au-dessus du header + panneau déroulant === */
+@media (max-width: 860px){
+  .nav-toggle{ display:inline-flex; }                 /* force l’affichage du bouton */
+  .main-nav{
+    position: fixed;
+    top: var(--header-h, 84px);
+    left: 0; right: 0;
+    flex-direction: column;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+    gap: .6rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .2s ease, opacity .2s ease;
+    z-index: 1001;                                   /* au-dessus du .site-header (1000) */
+  }
+  body.nav-open .main-nav{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Animation burger -> X */
+  body.nav-open .nav-toggle .bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  body.nav-open .nav-toggle .bar:nth-child(2){ opacity:0; }
+  body.nav-open .nav-toggle .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+}
