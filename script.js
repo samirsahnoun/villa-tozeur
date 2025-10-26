@@ -128,4 +128,9 @@
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
+})();// === PANSEMENT : désactive le menu mobile JS s'il existe ===
+(function(){
+  document.body.classList.remove('nav-open');
+  const btn = document.querySelector('.nav-toggle');
+  if (btn) btn.setAttribute('aria-expanded','false');
 })();

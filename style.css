@@ -24,4 +24,30 @@ html{ scroll-behavior:smooth; }
   body.nav-open .nav-toggle .bar:nth-child(1){ transform:translateY(7px) rotate(45deg); }
   body.nav-open .nav-toggle .bar:nth-child(2){ opacity:0; }
   body.nav-open .nav-toggle .bar:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+}/* === PANSEMENT : rétablir le menu classique sur TOUTES les tailles === */
+.nav-toggle{ display:none !important; }                 /* cache le hamburger */
+.main-nav{
+  position: static !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1rem !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: auto !important;
+}
+/* header au-dessus du contenu mais sans effet “panneau” */
+.site-header{ position: sticky; top: 0; z-index: 10; }
+
+/* Corrige les sauts d’ancre (titre pas caché par le header) */
+:root { --header-h: 96px; }
+section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
+html{ scroll-behavior: smooth; }
+
+/* Mobile: même rendu que PC (pas de menu déroulant) */
+@media (max-width: 860px){
+  .main-nav{ justify-content: flex-end; flex-wrap: wrap; }
 }
