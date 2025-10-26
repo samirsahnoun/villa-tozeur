@@ -11,6 +11,31 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Villa Tozeur – Calme, confort et authenticité à Tozeur">
   <meta property="og:description" content="Location saisonnière à Tozeur : 2 chambres, jardin privatif, clim & Wi-Fi fibre. Réservez facilement sur WhatsApp.">
+  <meta property="og:image" content="https://www.villa-tozeur.tn/images/logo-villa-les-dunes-dor.png">
+  <meta property="og:url" content="https://www.villa-tozeur.tn/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon & styles -->
+  <link rel="icon" type="image/png" href="images/logo-villa-les-dunes-dor.png">
+  <link rel="preload" as="image" href="images/hero.webp">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- Ton JS peut être ici avec defer -->
+  <script src="script.js" defer></script>
+</head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villa Tozeur – Location de vacances à Tozeur (2 ch, jardin, Wi-Fi)</title>
+  <meta name="description" content="Villa Tozeur : maison de plain-pied avec 2 chambres, salon, cuisine équipée, jardin privatif & BBQ, climatisation et Wi-Fi fibre. Près de l’aéroport et de la zone touristique. Réservation WhatsApp.">
+  <link rel="canonical" href="https://www.villa-tozeur.tn/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Villa Tozeur – Calme, confort et authenticité à Tozeur">
+  <meta property="og:description" content="Location saisonnière à Tozeur : 2 chambres, jardin privatif, clim & Wi-Fi fibre. Réservez facilement sur WhatsApp.">
   <meta property="og:image" content="https://www.villa-tozeur.tn/images/hero.jpg">
   <meta property="og:url" content="https://www.villa-tozeur.tn/">
   <meta property="og:locale" content="fr_FR">
@@ -28,9 +53,15 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
-        <img src="images/logo-villa-les-dunes-dor.png" alt="Logo Villa Tozeur" class="site-logo" width="120" height="120">
+        <img src="images/logo-villa-les-dunes-dor.png" alt="Logo Villa Tozeur" class="site-logo" width="120" height="120" loading="eager">
       </a>
 
+      <!-- Bouton hamburger (mobile) -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <!-- IMPORTANT: id="main-nav" -->
       <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <a href="#home">Accueil</a>
         <a href="#gallery">Galerie</a>
@@ -43,7 +74,7 @@
     </div>
   </header>
 
-  <!-- Bouton WhatsApp flottant -->
+    <!-- Bouton WhatsApp flottant -->
   <a href="https://wa.me/21655788630?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20la%20Villa%20Tozeur.%20Dates%20:%20__%20au%20__%20%7C%20Nb%20personnes%20:%20__"
      target="_blank" rel="noopener" class="whatsapp-float" aria-label="Réserver sur WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>

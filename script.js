@@ -213,3 +213,29 @@ function closeLB(){
     if (window.innerWidth > 860) setOpen(false);
   });
 })();
+// ===== NAV MOBILE TOGGLE =====
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('main-nav');
+  if (!btn || !nav) return;
+
+  const setOpen = (open) => {
+    document.body.classList.toggle('nav-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  btn.addEventListener('click', () => {
+    const open = !document.body.classList.contains('nav-open');
+    setOpen(open);
+  });
+
+  // Fermer au clic sur un lien
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => setOpen(false));
+  });
+
+  // Fermer si on repasse en desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) setOpen(false);
+  });
+})();
