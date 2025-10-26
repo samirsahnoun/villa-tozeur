@@ -425,3 +425,71 @@ body.lb-open{
     object-fit:cover !important; object-position:center !important;
   }
 }
+/* Hauteur réelle du header (logo + padding) */
+:root { --header-h: 96px; }  /* ajuste à 100–120 si besoin */
+
+/* Offset pour les ancres sans “pousser” visuellement le contenu */
+section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+
+/* Défilement fluide (on supprime scroll-padding-top qui sur-compensait) */
+html { scroll-behavior: smooth; }
+
+/* Évite un “double espace” sous le header si les titres ont une grande marge-top */
+section h2:first-of-type { margin-top: 0.2em; }
+
+/* Mobile: header un peu plus compact => offset réduit */
+@media (max-width: 860px){
+  :root { --header-h: 84px; }
+}
+/* ===== NAV MOBILE (empêche la superposition) ===== */
+.nav-toggle{ display:none; background:none; border:0; cursor:pointer; padding:.4rem .5rem; border-radius:10px }
+.nav-toggle .bar{ display:block; width:24px; height:2px; background:#333; margin:5px 0; transition:transform .2s ease, opacity .2s ease }
+
+/* Header au-dessus de tout */
+.site-header{ position: sticky; top:0; z-index:1000; }
+
+/* Offset d'ancre raisonnable (évite titres cachés) */
+:root { --header-h: 96px; }
+section[id]{ scroll-margin-top: calc(var(--header-h) + 8px); }
+html{ scroll-behavior:smooth; }
+
+@media (max-width: 860px){
+  :root { --header-h: 84px; }
+
+  /* Affiche le hamburger, compacte l'en-tête */
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  .main-nav{ display:flex; gap:1rem; } /* desktop par défaut */
+
+  /* Mode panneau déroulant */
+  .main-nav{
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+    gap: .6rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .2s ease, opacity .2s ease;
+    z-index: 999;
+  }
+
+  /* Ouvert */
+  body.nav-open .main-nav{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Locker le scroll quand le menu est ouvert */
+  body.nav-open{ overflow:hidden; }
+
+  /* Animation hamburger en X */
+  body.nav-open .nav-toggle .bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  body.nav-open .nav-toggle .bar:nth-child(2){ opacity:0; }
+  body.nav-open .nav-toggle .bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+}
