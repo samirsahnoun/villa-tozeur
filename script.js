@@ -1,4 +1,4 @@
-// ===== Villa Tozeur — Lightbox + Galerie + Menu mobile =====
+// ===== Villa Tozeur — Lightbox + Galerie + Menu mobile (version finale) =====
 (function(){
   const $ = (sel, root=document)=>root.querySelector(sel);
   const $$ = (sel, root=document)=>Array.from(root.querySelectorAll(sel));
@@ -20,17 +20,14 @@
     }
     lightboxImg = $('#lightbox-img');
 
-    // Clean UI
     $$('.close-btn,.arrow.left,.arrow.right,.counter,.fs-btn', lightbox).forEach(n=>n.remove());
 
-    // UI
     const counter = document.createElement('div'); counter.className = 'counter'; lightbox.appendChild(counter);
-    const closeBtn = document.createElement('div'); closeBtn.className = 'close-btn'; closeBtn.innerHTML='&times;'; closeBtn.setAttribute('role','button'); closeBtn.setAttribute('aria-label','Fermer'); lightbox.appendChild(closeBtn);
+    const closeBtn = document.createElement('div'); closeBtn.className = 'close-btn'; closeBtn.innerHTML='&times;'; lightbox.appendChild(closeBtn);
     const left = document.createElement('div'); left.className='arrow left'; left.innerHTML='&#10094;'; lightbox.appendChild(left);
     const right = document.createElement('div'); right.className='arrow right'; right.innerHTML='&#10095;'; lightbox.appendChild(right);
     const fsBtn = document.createElement('div'); fsBtn.className='fs-btn'; fsBtn.textContent='Plein écran'; lightbox.appendChild(fsBtn);
 
-    // Touch config
     lightbox.style.touchAction = 'pan-y';
 
     let current = 0;
@@ -92,7 +89,6 @@
       else if (e.key==='Escape'){ closeLB(); }
     });
 
-    // Swipe
     let startX=0,startY=0;
     lightbox.addEventListener('touchstart',(e)=>{
       if (!e.touches||e.touches.length===0) return;
@@ -107,7 +103,6 @@
       }
     },{passive:true});
 
-    // Fullscreen
     function toggleFullscreen(){
       const el=lightboxImg;
       if (!document.fullscreenElement){ if (el.requestFullscreen) el.requestFullscreen(); }
@@ -115,7 +110,6 @@
     }
     fsBtn.addEventListener('click',(e)=>{ e.stopPropagation(); toggleFullscreen(); });
 
-    // --- NAV MOBILE TOGGLE (unique) ---
     (function(){
       const btn=document.querySelector('.nav-toggle');
       const nav=document.getElementById('main-nav');
@@ -131,31 +125,7 @@
       window.addEventListener('resize', ()=>{ if (window.innerWidth>860) setOpen(false); });
     })();
 
-    // Footer year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-})();
-// ===== NAV MOBILE TOGGLE =====
-(function(){
-  const btn = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('main-nav');
-  if (!btn || !nav) return;
-
-  const setOpen = (open) => {
-    document.body.classList.toggle('nav-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  };
-
-  btn.addEventListener('click', () => {
-    setOpen(!document.body.classList.contains('nav-open'));
-  });
-
-  // Fermer au clic sur un lien
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
-
-  // Fermer si on repasse en desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 860) setOpen(false);
   });
 })();
