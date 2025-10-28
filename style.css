@@ -321,7 +321,6 @@ html{ scroll-behavior:smooth; }
   border-radius: 10px;
   display: block;
 }
-/* --- Agrandir les images de la galerie sur mobile --- */
 @media (max-width: 680px) {
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr) !important; /* 1 image par ligne */
