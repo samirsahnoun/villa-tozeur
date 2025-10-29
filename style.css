@@ -327,3 +327,11 @@ html{ scroll-behavior:smooth; }
   }
 }
 
+/* Conditions de séjour */
+#conditions h2{ margin:24px 0 8px; }
+.rules-table{ width:100%; border:1px solid var(--border); border-radius:12px; border-collapse:collapse; overflow:hidden; box-shadow:var(--shadow); background:#fff; }
+.rules-table th, .rules-table td{ padding:12px; text-align:left; vertical-align:top; }
+.rules-table th{ width:200px; background:var(--sec); }
+.rules-table tr:nth-child(odd) td{ background:#fafafa; }
+.rules-list{ margin:14px 0; padding-left:18px; }
+.rules-list li{ margin:6px 0; }
