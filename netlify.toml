@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/_/view"
+  from = "/_/*"
   to = "/"
   status = 301
   force = true
