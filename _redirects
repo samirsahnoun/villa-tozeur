@@ -1,0 +1,10 @@
+# Ligne 1 : Correction de l'erreur initiale "Page avec redirection"
+/_/view / / 301
+
+# Lignes 2 à 10 : Correction des erreurs 404 (Simplifiée)
+/presentation / / 301
+/galerie-photos / / 301
+/tarif / / 301
+/galerie.html / / 301
+/accueil / / 301
+/accueil/avis-clients / / 301
