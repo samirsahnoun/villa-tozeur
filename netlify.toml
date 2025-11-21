@@ -1,0 +1,41 @@
+[[redirects]]
+  from = "/_/view"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/presentation"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/galerie-photos"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tarif"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/galerie.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accueil"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accueil/avis-clients"
+  to = "/"
+  status = 301
+  force = true
